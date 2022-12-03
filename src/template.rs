@@ -26,18 +26,21 @@ C Z";
     }
 
     #[test]
+    #[ignore]
     fn task_one_verify() {
         let result = task_one(INPUT);
         assert_eq!(13268, result);
     }
 
     #[test]
+    #[ignore]
     fn task_two_example() {
         let result = task_two(EXAMPLE);
         assert_eq!(12, result);
     }
 
     #[test]
+    #[ignore]
     fn task_two_verify() {
         let result = task_two(INPUT);
         assert_eq!(15508, result);
