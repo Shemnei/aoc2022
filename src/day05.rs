@@ -84,7 +84,6 @@ impl FromStr for Stacks {
         let num = lines
             .next()
             .unwrap()
-            .trim_end()
             .split_whitespace()
             .last()
             .unwrap()
@@ -100,7 +99,7 @@ impl FromStr for Stacks {
 
                 index += (c.len() - s.len()) / 4;
 
-                if let Some(x @ b'A'..=b'Z') = s.as_bytes().get(0) {
+                if let Some(x @ b'A'..=b'Z') = s.as_bytes().first() {
                     stacks[index].push(*x);
                     index += 1;
                 };
@@ -161,7 +160,6 @@ move 1 from 1 to 2
 ";
 
     #[test]
-    #[ignore]
     fn task_one_example() {
         let result = task_one(EXAMPLE);
         assert_eq!("CMZ", result);
@@ -182,6 +180,6 @@ move 1 from 1 to 2
     #[test]
     fn task_two_verify() {
         let result = task_two(INPUT);
-        assert_eq!("", result);
+        assert_eq!("TPFFBDRJD", result);
     }
 }

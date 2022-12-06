@@ -103,7 +103,7 @@ impl Rps {
         }
     }
 
-    fn from_outcome(self, outcome: RoundOutcome) -> Self {
+    fn for_outcome(self, outcome: RoundOutcome) -> Self {
         match outcome {
             RoundOutcome::Win => self.win(),
             RoundOutcome::Lose => self.lose(),
@@ -120,7 +120,7 @@ fn task_two(input: &str) -> u64 {
             let h = Rps::from(b[0]);
             let o = RoundOutcome::from(b[2]);
 
-            score_round(h, h.from_outcome(o))
+            score_round(h, h.for_outcome(o))
         })
         .sum()
 }

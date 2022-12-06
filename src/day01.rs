@@ -22,7 +22,7 @@ fn task_two(input: &str) -> u64 {
         })
         .collect::<Vec<_>>();
 
-    (&mut calories).sort_unstable();
+    calories.sort_unstable();
 
     calories.iter().rev().take(3).sum()
 }
